@@ -1,0 +1,629 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* In this I have used css just for animations,making hexagon-shape  and media querries*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  scroll-behavior: smooth;
+  font-family: "Popins", Arial, Helvetica, sans-serif;
+}
+:root {
+  :root {
+    --tw-shadow-custom: 0 4px 10px rgba(0, 0, 0, 0.1);
+    --tw-bg-customBg: rgba(255, 255, 255, 0.8);
+  }
+}
+body {
+  color: #fff;
+  background-color: #000000f4;
+}
+
+.hexagon-container {
+  animation: zoomIn 1s ease forwards, floatImage 4s ease-in-out infinite;
+  opacity: 0;
+  animation-delay: calc(1.5s), calc(2.5s);
+}
+
+.hexagon-shape {
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  position: relative;
+}
+
+/* Shining Border Effect */
+.hexagon-container::after {
+  content: "";
+  position: absolute;
+  top: 1%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  background: linear-gradient(to top, rgb(12, 239, 255), transparent);
+  filter: blur(4px);
+  z-index: 0;
+  transform: scale(1.04);
+}
+
+/* Animations  */
+.logo {
+  opacity: 0;
+  animation: slideRight 1s ease forwards;
+}
+.navbars {
+  opacity: 0;
+  animation: slideTop 0.5s ease forwards;
+  animation-delay: calc(0.2s * var(--i));
+}
+.custom-i-1 {
+  --i: 1;
+}
+.custom-i-2 {
+  --i: 2;
+}
+.custom-i-3 {
+  --i: 3;
+}
+.custom-i-4 {
+  --i: 4;
+}
+.custom-i-5 {
+  --i: 5;
+}
+.custom-i-6 {
+  --i: 7;
+}
+.custom-i-7 {
+  --i: 8;
+}
+.custom-i-8 {
+  --i: 9;
+}
+.custom-i-9 {
+  --i: 10;
+}
+
+.tagHead {
+  opacity: 0;
+  animation: slideBottom 0.5s ease forwards;
+  animation-delay: 0.7s;
+}
+.cardBottom {
+  opacity: 0;
+  animation: slideBottom 0.5s ease forwards;
+  animation-delay: 1s;
+}
+.tagHead:nth-of-type(2) {
+  animation: slideTop 0.5s ease forwards;
+  animation-delay: 0.7s;
+}
+.tagName {
+  animation: slideRight 1s ease forwards;
+  animation-delay: 1s;
+  opacity: 0;
+}
+
+.tagLines {
+  animation: slideLeft 1s ease forwards;
+  animation-delay: 1s;
+  opacity: 0;
+}
+.skillLeft {
+  animation: slideLeft 1s ease forwards;
+  opacity: 0;
+}
+.aboutLines {
+  animation: slideLeft 1s ease forwards;
+  animation-delay: 2s;
+  opacity: 0;
+}
+.socialIcons {
+  animation: slideLeft 1s ease forwards;
+  animation-delay: calc(0.2s * var(--i));
+  opacity: 0;
+}
+.contacts {
+  animation: slideLeft 1s ease forwards;
+  animation-delay: 1s;
+  opacity: 0;
+}
+.btn {
+  animation: slideTop 1s ease forwards;
+  animation-delay: 2s;
+  opacity: 0;
+}
+.cardTop {
+  position: relative;
+  animation: slideTop 1s ease forwards;
+  animation-delay: 1s;
+  opacity: 0;
+}
+.cardTop:hover {
+  transition: ease;
+  transform: translateY(200px);
+}
+.projectImg {
+  transition: 0.5s ease;
+}
+.projectImg:hover {
+  transform: scale(1.1);
+}
+
+.imageDiv:hover .layer {
+  transform: translateY(0);
+}
+.layer {
+  transform: translateY(100%);
+  transition: 0.6s ease;
+}
+.dropMenu {
+  display: none;
+}
+
+/* Keyframe Animation */
+@keyframes slideRight {
+  0% {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slideLeft {
+  0% {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideTop {
+  0% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideBottom {
+  0% {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes zoomIn {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes floatImage {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-24px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-up {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Media Querries Logics */
+@media (min-width: 250px) and (max-width: 376px) {
+  .homeMain {
+    margin-top: 5rem !important;
+  }
+
+  .iconsBg {
+    margin-bottom: 2rem;
+  }
+  .iconDiv {
+    gap: 0.32rem;
+  }
+  .footIconsDiv {
+    margin-right: 10rem;
+  }
+  .imgAdj {
+    margin-top: -12rem;
+    width: 3rem;
+    height: 6rem;
+  }
+  .smallText {
+    font-size: 0.4rem;
+  }
+  .mediumText {
+    padding: 0.6rem 0;
+    font-size: 0.8rem;
+  }
+  .largeText {
+    font-size: 1rem;
+  }
+  .aboutImg {
+    margin-top: 12rem !important;
+  }
+}
+
+/* Tablet Styles */
+@media (min-width: 300px) and (max-width: 756px) {
+  .header {
+    display: none;
+  }
+  .dropMenu {
+    display: unset;
+  }
+  .iconBar {
+    display: unset;
+  }
+  .smallText {
+    font-size: 0.92rem;
+  }
+  .mediumText {
+    padding: 0.6rem 0;
+    font-size: 1.5rem;
+  }
+  .largeText {
+    font-size: 1.1rem;
+  }
+
+  .imgDiv {
+    margin-top: -13rem;
+    margin-right: 0;
+  }
+
+  .hexagon-container {
+    width: 100%;
+    height: 100%;
+  }
+  .imgAdj {
+    width: 9rem;
+    height: 14rem;
+  }
+  .hexagon-container::after {
+    width: 98%;
+    height: 100%;
+  }
+
+  .homeLines {
+    margin: -10px 0;
+    font-size: 1rem;
+  }
+
+  .homeMain {
+    margin-top: -3rem;
+    padding: 26px;
+  }
+  .aboutMain {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+  }
+  .aboutDiv {
+    align-items: center;
+    margin-left: 0;
+  }
+  .aboutImg {
+    margin-left: 0;
+    margin-bottom: 0rem;
+  }
+  .aboutText {
+    font-size: 2rem;
+  }
+  .servicesH2 {
+    padding-top: 4rem;
+    font-size: 2rem;
+  }
+  .cardSize {
+    padding: 6px;
+    width: 40%;
+    height: 16%;
+  }
+  .cardIcon {
+    font-size: 1.5rem;
+  }
+  .cardTittle {
+    font-size: 1.2rem;
+  }
+  .cardLines {
+    width: 100%;
+    font-size: 0.5rem;
+  }
+  .cardDiv {
+    gap: 2rem;
+  }
+  .skillHead {
+    padding-top: 1rem;
+    padding-bottom: 4.2rem;
+  }
+
+  .techHead {
+    padding-top: 1rem;
+    margin-left: 0.6rem;
+    text-align: start;
+    font-size: 1.2rem;
+    margin-bottom: 0;
+  }
+  .techSkills {
+    width: 400px;
+    height: 300px;
+    padding: 0%;
+  }
+  .skillDiv {
+    margin-left: 0.9rem;
+    padding: 0.4rem;
+  }
+  .proSkillH2 {
+    margin-top: -2.5rem;
+    padding-bottom: 0;
+    font-size: 1.2rem;
+  }
+  .proContainer {
+    padding-left: 2rem;
+  }
+  .proSkillDiv {
+    gap: 0;
+  }
+  .circleSize {
+    width: 80px;
+    height: 80px;
+  }
+  .circleText {
+    font-size: 0.8rem;
+  }
+  .projectImg {
+    width: 11rem;
+    height: 9rem;
+  }
+  .projectHead {
+    margin-left: 0;
+    font-size: 2.2rem;
+    text-align: center;
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+  }
+
+  .projectContainer {
+    margin: 1rem 0;
+  }
+  .projectText {
+    font-size: 1.1rem;
+    margin-top: 1rem;
+  }
+  .moreProject {
+    padding: 0 0.7rem;
+    gap: 9px;
+  }
+  .layerName {
+    font-size: 1.1rem;
+  }
+  .layerText {
+    font-size: 0.55rem;
+  }
+  .layerIcon {
+    font-size: 1.2rem;
+  }
+  .iconCover {
+    width: 1.64rem;
+    height: 1.67rem;
+    padding: 3px;
+  }
+  .contactHead {
+    font-size: 2.1rem;
+  }
+  .inputDiv {
+    max-width: 85%;
+  }
+  .nameInput,
+  .emailInput,
+  .numInput,
+  .subInput {
+    height: 1.3rem;
+    font-size: 1.1rem;
+  }
+
+  .messageInput {
+    font-size: 1.1rem;
+    width: 95%;
+    height: 13rem;
+  }
+  .iconsBg {
+    width: 50%;
+    height: 2.5rem;
+  }
+  .socialIcons {
+    width: 2rem;
+  }
+  .footIconsDiv {
+    justify-content: start;
+    margin-left: -5.3rem;
+    margin-top: 18%;
+    margin-bottom: 6px;
+    width: 64%;
+    height: 20%;
+  }
+  .slash {
+    display: none;
+  }
+  .emailText,
+  .numText,
+  .numIcon,
+  .emailIcon {
+    font-size: 0.6rem;
+  }
+
+  .emailIcon {
+    margin-left: 0.3rem;
+  }
+  .footerText,
+  .footIcon {
+    font-size: 1rem;
+  }
+}
+@media (min-width: 540px) and (max-width: 756px) {
+  .smallText {
+    font-size: 1rem !important;
+  }
+  .homeMain {
+    margin-top: 1rem !important;
+  }
+  .mediumText {
+    padding: 0.6rem 0;
+    font-size: 2rem;
+  }
+  .homeLines {
+    font-size: 1rem;
+  }
+
+  .imgDiv {
+    margin-top: -8rem;
+    margin-right: 0;
+  }
+
+  .hexagon-container {
+    width: 100%;
+    height: 100%;
+  }
+  .imgAdj {
+    width: 14rem;
+    height: 19rem;
+  }
+  .hexagon-container::after {
+    width: 98%;
+    height: 100%;
+  }
+  .aboutImg {
+    margin-left: 0%;
+    margin-bottom: 0rem;
+  }
+  .cardSize {
+    width: 30%;
+  }
+
+  .techHead {
+    margin-left: 3rem;
+    font-size: 1.9rem;
+  }
+
+  .skillDiv {
+    margin-left: 2rem;
+    padding: 0 1rem;
+  }
+  .projectHead {
+    padding-top: 10rem;
+    padding-bottom: 2rem;
+  }
+  .projectContainer {
+    margin: 2rem 1rem;
+  }
+  .iconsBg {
+    width: 14rem;
+  }
+
+  .footIconsDiv {
+    width: 16rem;
+    margin-bottom: 1rem;
+  }
+}
+
+/* Laptop Styles */
+@media (min-width: 757px) and (max-width: 1024px) {
+  .headMain {
+    padding: 2.5rem;
+  }
+  .homeMain {
+    margin-top: -2rem;
+    padding: 2rem;
+  }
+  .smallText {
+    font-size: 1.7rem;
+  }
+  .mediumText {
+    padding: 0.6rem 0;
+    font-size: 2.6rem;
+  }
+  .homeLines {
+    font-size: 1.4rem;
+  }
+
+  .imgDiv {
+    margin-top: -9rem;
+    margin-right: 0;
+  }
+
+  .hexagon-container {
+    width: 17rem;
+    height: 23rem;
+  }
+  .aboutMain {
+    padding: 2px 1rem;
+  }
+  .cardSize {
+    width: 36%;
+  }
+  .skillHead {
+    padding: 5rem 0;
+  }
+  .techHead {
+    font-size: 1.9rem;
+  }
+  .techSkills {
+    width: 400px;
+    height: 300px;
+    padding: 0;
+  }
+  .skillDiv {
+    margin-left: 2rem;
+    padding: 1rem;
+  }
+  .projectHead {
+    padding-top: 10rem;
+    padding-bottom: 2rem;
+  }
+  .projectContainer {
+    margin: 2rem 1rem;
+  }
+  .inputDiv {
+    max-width: 80%;
+    padding: 1rem 2rem;
+  }
+  .messageInput {
+    margin-bottom: 2rem;
+  }
+  .iconsBg {
+    width: 32%;
+  }
+  .footIconsDiv {
+    width: 26rem;
+  }
+}
