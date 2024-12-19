@@ -1,64 +1,87 @@
 import React from "react";
-import MainHeading from "../Components/mainHeading";
 import ProjectData from "../Components/ProjectData";
-import Link from "next/link";
-import { PiArrowSquareUpRightLight } from "react-icons/pi";
-function Projects() {
+import MainHeading from "../Components/mainHeading";
+import Cmd from "../Components/Cmd";
+
+function page() {
   return (
-    <div id="Projects" className="section">
-      <MainHeading text1="Latest" text2="Projects" 
-      textSize="projectHead text-[2.3rem] pt-4 -ml-28"
+    <div className="bg-custom-radial h-screen w-screen overflow-x-hidden">
+      <MainHeading
+        text1="More"
+        text2="Projects"
+        textSize="-mt-[1px] text-[2.2rem]"
       />
-      <div className="-mt-4 project-container flex p-4 gap-3 justify-center max-w-full flex-wrap ">
+
+      <div className="moreProject gap-7 flex justify-center max-w-fit flex-wrap">
       <ProjectData
-          tittle="Couch Web Hakhaton"
-          projectImage="/projectImages/Hakhaton Challenge.png"
-          projectName="Couch Website"
-          description="A fully responsive couch website built in 24 hours during a GIAIC hackathon, inspired by a Figma design."
-          projectWebLink="https://hakhaton-ecommerece-website.vercel.app/"
-          index={1}
+          tittle="OpenShop"
+          projectImage="/projectImages/openShop.png"
+          projectName="OpenShop"
+          description="A Next.js OpenShop dashboard showing sales, expenses, orders, and customer metrics, with recent orders and popular products."
+          projectWebLink="https://openshop-site.netlify.app/"
+          index={7}
         />
         <ProjectData
-          tittle="Practice Hakhaton"
-          projectImage="/projectImages/Practice-Ecommerece-Hakhaton.png"
-          projectName="Figma E-Commerce"
-          description="A sleek e-commerce site built with Next.js, featuring dynamic pages, responsive design, and inspired by a Figma prototype."
-          projectWebLink="https://practice-hakhaton-2.vercel.app/"
-          index={2}
+          tittle="PanaCloud Web"
+          projectImage="/projectImages/PanaCloud.jpeg"
+          projectName="PanaCloud Web"
+          description="A portfolio website built using HTML and CSS. This project is part of an assignment for the GAIAC program. It's fully optimized for all devices."
+          projectWebLink="https://pana-cloud-portfolio-website.vercel.app/"
+          index={8}
         />
         <ProjectData
-          tittle="Resume Builder"
-          projectImage="/projectImages/resumeImage.jpeg"
-          projectName="Resume Builder"
-          description="A sleek, Streamlined Design Resume Builder website using HTML, CSS, and TypeScript for quick and customizable resume creation."
-          projectWebLink="https://dyamic-cv-maker.vercel.app/" index={3}        />
-        <ProjectData 
-          tittle="Carmella App"
-          projectImage="/projectImages/carmellaApp.jpeg"
-          projectName="Carmella App"
-          description="A Next.js web app dashboard displaying subject cards (Math, English) by grade and topic, with quick-access icons for Students, Polls, Work, Reports, and Settings."
-          projectWebLink="https://carmella-app-react.netlify.app/" index={4}        />
-        <ProjectData 
-          tittle="Doc Mini App"
-          projectImage="/projectImages/docMiniApp.jpeg"
-          projectName="Doc Mini App"
-          description="This Web App is made with Next.js, features smooth drag-and-drop and seamless animations for an interactive experience"
-          projectWebLink="https://doc-mini-app.netlify.app/" index={5}        />
-        <ProjectData 
-          tittle="TodoList"
-          projectImage="/projectImages/todolist.jpg"
-          projectName="TaskMaster"
-          description="It is a sleek and modern to-do list app that allows you to easily add, view, and delete tasks. Stay organized and boost your productivity with its intuitive interface!"
-          projectWebLink="https://react-todolist-tailwind.netlify.app/" index={6}        />
+          tittle="Currency Convertor"
+          projectName="Currency Convertor"
+          projectImage="/projectImages/Currency Convertor.jpeg"
+          projectWebLink="https://currencyconvertorhuzaifa.netlify.app/"
+          description="
+A simple currency converter built with HTML, CSS, and JavaScript that converts between currencies using real-time exchange rates."
+          index={9}
+        />
+        <ProjectData
+          tittle="RPS Game"
+          projectName="RPS Game"
+          projectImage="/projectImages/RPS.jpeg"
+          projectWebLink="https://rock-paper-scissor-huzaifa.netlify.app/"
+          description="A basic Rock Paper Scissors game made with HTML, CSS, and JavaScript, where players compete against the computer."
+          index={10}
+        />
+        <ProjectData
+          tittle="Myntera clone"
+          projectName="Myntera"
+          projectImage="/projectImages/myntera.jpeg"
+          projectWebLink="https://myntera-clone-ecomerece-website.netlify.app/"
+          description="A responsive HTML and CSS clone of the Myntera eCommerce site, featuring a stylish product catalog and intuitive navigation for a seamless shopping experience."
+          index={11}
+        />
+        <ProjectData
+          tittle="WebDev Creative"
+          projectName="WebDev Craetive"
+          projectImage="/projectImages/WebDev.png"
+          projectWebLink="https://responsive-frontend-website.netlify.app/"
+          description="A creative project featuring a responsive landing page with a sleek navigation bar that adapts to various screen sizes."
+          index={12}
+        />
+        <ProjectData
+          tittle="Periodic Table"
+          projectName="Periodic Table"
+          projectImage="/projectImages/periodic.jpeg"
+          projectWebLink="https://the-periodic-table.vercel.app/"
+          description="A visually appealing periodic table created with HTML and CSS, showcasing a strong understanding of CSS Grid layout for organizing elements effectively."
+          index={13}
+        />
+        <ProjectData
+          tittle="PanaCloud Basic Web"
+          projectName="PanaCloud Web"
+          projectImage="/projectImages/PanaCloudWeb.jpeg"
+          projectWebLink="https://pana-cloud-portfolio.vercel.app/"
+          description="A basic web page for panaCloud to practice HTML and CSS. This project focuses on applying foundational concepts, including structured layout."
+          index={14}
+        />
       </div>
-      <div className="flex justify-center pt-3 pb-9">
-<Link href="/More_Projects">
-      <button className="btn text-[16px] bg-hoverColor rounded-full px-4 py-[9px] font-semibold shadow-custom tracking-wide text-black hover:bg-zinc-900 hover:text-white"><span className="flex items-center">See More <i className=" text-[27px] "><PiArrowSquareUpRightLight/></i></span>
-          </button>
-</Link>
-      </div>
+      <Cmd />
     </div>
   );
 }
 
-export default Projects;
+export default page;
